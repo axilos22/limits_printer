@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
     print_int_boundaries("SIGNED CHAR", SCHAR_MIN, SCHAR_MAX);
     print_uboudaries("UNSIGNED CHAR", UCHAR_MAX);
     print_separator();
-    print_int_boundaries("SIGNED INTEGER", INT_MIN, INT_MAX);
-    print_uboudaries("UNSIGNED INTEGER", UINT_MAX);
-    print_separator();
     print_int_boundaries("SIGNED SHORT", SHRT_MIN, SHRT_MAX);
     print_uboudaries("UNSIGNED SHORT", USHRT_MAX);
+    print_separator();
+    print_int_boundaries("SIGNED INTEGER", INT_MIN, INT_MAX);
+    print_uboudaries("UNSIGNED INTEGER", UINT_MAX);
     print_separator();
     print_int_boundaries("SIGNED LONG", LONG_MIN, LONG_MAX);
     print_uboudaries("UNSIGNED LONG", ULONG_MAX);
