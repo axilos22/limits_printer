@@ -1,0 +1,3 @@
+#define limits_printer_VERSION_MAJOR @limits_printer_VERSION_MAJOR@
+#define limits_printer_VERSION_MINOR @limits_printer_VERSION_MINOR@
+#define limits_printer_VERSION_PATCH @limits_printer_VERSION_PATCH@

@@ -1,1 +1,9 @@
-add_executable(limits_printer main.cpp)
+set(EXECUTABLE_NAME limits_printer)
+
+set(${EXECUTABLE_NAME}_VERSION_MAJOR 1)
+set(${EXECUTABLE_NAME}_VERSION_MINOR 1)
+set(${EXECUTABLE_NAME}_VERSION_PATCH 0)
+
+configure_file(${CMAKE_CURRENT_LIST_DIR}/version.h.in ${CMAKE_CURRENT_LIST_DIR}/version.h @ONLY)
+add_executable(${EXECUTABLE_NAME} main.cpp)
+target_include_directories(${EXECUTABLE_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR})

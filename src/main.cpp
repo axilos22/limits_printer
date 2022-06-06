@@ -1,5 +1,6 @@
 #include <iostream> // std::cout
 #include <iomanip>  // std::setw
+#include <string>   // str.compare
 
 #ifndef _LIMITS_H
 #include <limits.h>
@@ -7,6 +8,8 @@
 #ifndef _FLOAT_H___
 #include <float.h>
 #endif
+
+#include "version.h"
 
 const int default_width = 30;
 const int field_number = 3;
@@ -16,14 +19,34 @@ void print_separator();
 void print_int_boundaries(const char *type, const long long lower_bound, const long long upper_bound);
 void print_float_boundaries(const char *type, const long double lower_bound, const long double upper_bound);
 void print_uboudaries(const char *type, const unsigned long long upper_bound);
+void print_usage();
+void print_version();
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+    if (argc == 2)
+    {
+        string first_argument(argv[1]);
+        if (first_argument.compare("-t") == 0)
+        {
+            cout << "Empty test sequence !" << endl;
+            return -1;
+        }
+        else if (first_argument.compare("-v") == 0)
+        {
+            print_version();
+            return 0;
+        }
+        else
+        {
+            print_usage();
+            return 0;
+        }
+    }
     cout << "Starting limits_printer..." << endl;
     cout << setw(default_width) << "Type name" << setw(default_width) << "Lower bound" << setw(default_width) << "Upper bound" << endl;
-
 
     cout << "Integer types" << endl;
     print_int_boundaries("SIGNED CHAR", SCHAR_MIN, SCHAR_MAX);
@@ -65,9 +88,42 @@ void print_uboudaries(const char *type, const unsigned long long upper_bound)
 
 void print_separator()
 {
-    for(int rank=0; rank < field_number * default_width; rank++)
+    for (int rank = 0; rank < field_number * default_width; rank++)
     {
         cout << separator;
     }
     cout << endl;
+}
+
+void print_usage()
+{
+    cout << "NAME :" << endl;
+    cout << "\t" << "limits_printer" << endl;
+    cout << "SYNOPSIS :" << endl;
+    cout << "\t" << "limits_printer -h" << endl;
+    cout << "\t" << "limits_printer -v" << endl;
+    cout << "\t" << "limits_printer -t [test sequence]" << endl;
+    cout << "DESCRIPTION :" << endl;
+    cout << "\t" <<"limits_printer provides most of the upper and lower bounds of usual C++ data types." << endl;
+    cout << "\t" << "Note that all these variables are extracte from <limits.h>" << endl;
+    cout << "\t" << "To locate the currently used limit.h: g++ -H <executable>. With MSVC, activate the /showInclude option" << endl;
+    cout << endl;
+    cout << "\t" << "h : Display the present help" << endl;
+    cout << endl;
+    cout << "\t" << "v : Show the program version" << endl;
+    cout << endl;
+    cout << "\t" << "t : Runs the test sequence" << endl;
+}
+
+void print_version()
+{
+    cout << "limits_printer v" << limits_printer_VERSION_MAJOR
+         << "." << limits_printer_VERSION_MINOR
+         << "." << limits_printer_VERSION_PATCH
+         << endl;
+}
+
+int run_test()
+{
+    return 0;
 }

@@ -4,6 +4,9 @@
 # cmake
 /build/*
 
+# generated code
+src/version.h
+
 # Prerequisites
 *.d
 
