@@ -6,4 +6,5 @@ add_library(${LIB_NAME}
 
 target_include_directories(${LIB_NAME} INTERFACE ${CMAKE_CURRENT_LIST_DIR})
 
+enable_testing()
 add_subdirectory(test)
