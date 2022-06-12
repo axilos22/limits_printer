@@ -33,7 +33,3 @@ void print_version()
     printf("v%u.%u.%u\n", limits_printer_VERSION_MAJOR, limits_printer_VERSION_MAJOR, limits_printer_VERSION_PATCH);
 }
 
-int run_test()
-{
-    return 0;
-}
