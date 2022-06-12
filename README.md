@@ -1,6 +1,6 @@
 # Limits printer
 
-limits_printer provides most of the upper and lower bounds of usual C++ data types.
+limits_printer provides most of the upper and lower bounds of usual C data types.
 
 ## Note
 
