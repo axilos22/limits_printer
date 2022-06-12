@@ -92,6 +92,7 @@ void print_float_limits()
     printf("Floating point types\n");
     print_float_boundaries("FLOAT", FLT_MIN, FLT_MAX);
     print_float_boundaries("DOUBLE", DBL_MIN, DBL_MAX);
+    // WARNING: long double printing seems broken on some compilers
     print_long_double_boundaries("LONG DOUBLE", LDBL_MIN, LDBL_MAX);
     print_separator_line();
 }
