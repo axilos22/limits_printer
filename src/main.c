@@ -10,27 +10,23 @@ int main(int argc, char *argv[])
 {
     if (argc == 2)
     {
-        char* first_argument = argv[1];
-        if (strcmp(first_argument, "-t") == 0)
-        {
-            printf("Empty test sequence !\n");
-            return -1;
-        }
-        else if (strcmp(first_argument, "-v") == 0)
+        if (strcmp(argv[1], "-v") == 0)
         {
             print_version();
             return 0;
         }
         else
         {
+            if (strcmp(argv[1], "-h") != 0)
+            {
+                printf("Argument not recognized. Help:");
+            }
             print_usage();
             return 0;
         }
     }
     print_all_limits();
 }
-
-
 
 void print_version()
 {
